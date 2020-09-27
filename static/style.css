@@ -1,4 +1,10 @@
 body {
-   background: white;
-   color: black;
+   background: mintcream;
+   color: cadetblue;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  display: block;
+  text-decoration: none;
 }
