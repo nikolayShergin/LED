@@ -2,7 +2,7 @@
 Created by Nikolay Shergin for Amirkhanov Marat.
 Flask application to control ws2812b LED strip using NeoPixel library with GET API request running on Raspberry Pi.
 
-# Install and run as root
+# Install and run as root 
 ## Prepare your raspberry
 The audio output must be deactivated. For this we edit the file
   echo 'blacklist snd_bcm2835' >> /etc/modprobe.d/snd-blacklist.conf
