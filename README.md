@@ -38,6 +38,9 @@ pixel_pin = board.D18
 num_pixels = 60
 ```
 #COLORS
+See here for more colors codes:
+https://www.w3schools.com/colors/colors_picker.asp
+
 ```
 colors = {
   "BLACK":(0, 0, 0),
