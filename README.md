@@ -3,26 +3,26 @@ Created by Nikolay Shergin for Amirkhanov Marat.
 Flask application to control ws2812b LED strip using NeoPixel library with GET API request running on Raspberry Pi.
 
 # Install and run as root 
-## Prepare your raspberry
+Prepare your raspberry
 The audio output must be deactivated. For this we edit the file
-  echo 'blacklist snd_bcm2835' >> /etc/modprobe.d/snd-blacklist.conf
+echo 'blacklist snd_bcm2835' >> /etc/modprobe.d/snd-blacklist.conf
 Edit the file /boot/config.txt and comment dtparam=audio=on line there
-  #dtparam=audio=on
+#dtparam=audio=on
 Reboot the Pi
-  reboot
+reboot
   
-### Install components
-  apt-get update
-  apt-get install -y git python-dev python3-pip
-  pip3 install Flask rpi_ws281x adafruit-circuitpython-neopixel
-  git clone https://github.com/nikolayShergin/LED.git
-  cd LED
+# Install components
+apt-get update
+apt-get install -y git python-dev python3-pip
+pip3 install Flask rpi_ws281x adafruit-circuitpython-neopixel
+git clone https://github.com/nikolayShergin/LED.git
+cd LED
   
-### Run the App
-  python3 ver1.0.cells.py
+# Run the App
+python3 ver1.0.cells.py
   
   
-## Customization
+# Customization
 Change PIN, num_pixels as required.
 Add new colors if needed.
 Configure CELL LED ranges.
