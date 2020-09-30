@@ -4,7 +4,7 @@ import datetime
 import board
 import neopixel
  
-pixel_pin = board.D18
+#pixel_pin = board.D18
 num_pixels = 160
 
 
@@ -19,7 +19,7 @@ colors = {
   "PURPLE":(180, 0, 255)
 }
 #CELLS
-cells = {
+c16 = {
   "C1.6.1":range(152, 160),
   "C1.6.2":range(142, 150),
   "C1.6.3":range(132, 140),
@@ -37,7 +37,7 @@ cells = {
   "C1.6.15":range(12, 20),
   "C1.6.16":range(2, 10) 
   }
-pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False)
+#pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False)
 
 
 app = Flask(__name__)
@@ -63,8 +63,10 @@ def test(cell, color):
     ce = cell.upper()
     print(ce, c)
     if c in colors:
-      if ce in cells:
-        for i in cells[ce]:
+      if ce in c16:
+        pixel_pin = board.D18
+        pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False)
+        for i in c16[ce]:
           pixels[i] = colors[c]
           pixels.show()
       else:
