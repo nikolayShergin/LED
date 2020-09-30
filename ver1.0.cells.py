@@ -5,7 +5,7 @@ import board
 import neopixel
  
 pixel_pin = board.D18
-num_pixels = 60
+num_pixels = 160
 
 
 #COLORS
@@ -20,13 +20,23 @@ colors = {
 }
 #CELLS
 cells = {
-  "C1":range(0, 3),
-  "C2":range(3, 20),
-  "C3":range(20, 27),
-  "C4":range(27, 40),
-  "C5":range(40, 50),
-  "C6":range(50, 60)
-}
+  "C1.6.1":range(152, 160),
+  "C1.6.2":range(142, 150),
+  "C1.6.3":range(132, 140),
+  "C1.6.4":range(122, 130),
+  "C1.6.5":range(112, 120),
+  "C1.6.6":range(102, 110),
+  "C1.6.7":range(92, 100),
+  "C1.6.8":range(82, 90),
+  "C1.6.9":range(72, 80),
+  "C1.6.10":range(62, 70),
+  "C1.6.11":range(52, 60),
+  "C1.6.12":range(42, 50),
+  "C1.6.13":range(32, 40),
+  "C1.6.14":range(22, 30),
+  "C1.6.15":range(12, 20),
+  "C1.6.16":range(2, 10) 
+  }
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False)
 
 
