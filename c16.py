@@ -1,12 +1,9 @@
 from flask import Flask, render_template, url_for
 from markupsafe import escape
-import datetime 
-import board
-import neopixel
- 
-#pixel_pin = board.D18
-num_pixels = 160
-
+import datetime, board, neopixel, requests
+pixel_pin = board.D18
+num_pixels = 60
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False)
 
 #COLORS
 colors = {
@@ -37,8 +34,6 @@ c16 = {
   "C1.6.15":range(12, 20),
   "C1.6.16":range(2, 10) 
   }
-#pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False)
-
 
 app = Flask(__name__)
 @app.route("/")
@@ -64,13 +59,12 @@ def test(cell, color):
     print(ce, c)
     if c in colors:
       if ce in c16:
-        pixel_pin = board.D18
-        pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False)
         for i in c16[ce]:
           pixels[i] = colors[c]
-          pixels.show()
+          pixels.show() 
       else:
-         return 'Cell not found' 
+         #return 'Cell not found' 
+         requests.get('http://localhost:5000/on/' + ce + '/' +c)
     else:
       return "Color not found"  
     return 'Current cell is %s' % escape(ce)
