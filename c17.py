@@ -64,8 +64,8 @@ def test(cell, color):
           pixels.show()
       else:
          return 'Cell not found' 
-    else:
-      return "Color not found"  
+#    else:
+#      return "Color not found"  
     return 'Current cell is %s' % escape(ce)
 
 
