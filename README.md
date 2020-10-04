@@ -26,7 +26,8 @@ cd LED
 ```  
 # Run the App
 ```
-python3 ver1.0.cells.py
+chmod +x startme
+./startme
 ```  
   
 # Customization
